@@ -105,13 +105,3 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %_var/log/%name.err
 
 
-
-* Mon Apr 25 2005 Olivier Thauvin <nanardon@mandriva.org> 0.12-1mdk
-- 0.12
-
-* Sun Jan 30 2005 Sylvie Terjan <erinmargault@mandrake.org> 0.11-1mdk
-- Change version to 0.11 
-
-* Tue Dec 16 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 0.9-1mdk
-- Make a specfile 
-
