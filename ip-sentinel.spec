@@ -10,7 +10,7 @@ Source0: %{name}-%{version}.tar.bz2
 License: GPL
 Group: Networking/Other
 Url: http://enrico-scholz.de/ip-sentinel/
-PreReq: rpm-helper
+Requires(post,preun):	rpm-helper
 
 %description
 This program tries to prevent unauthorized usage of IPs within
