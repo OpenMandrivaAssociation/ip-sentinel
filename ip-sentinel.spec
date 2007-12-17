@@ -10,7 +10,6 @@ Source0: %{name}-%{version}.tar.bz2
 License: GPL
 Group: Networking/Other
 Url: http://enrico-scholz.de/ip-sentinel/
-BuildRoot: %{_tmppath}/%{name}-buildroot
 PreReq: rpm-helper
 
 %description
