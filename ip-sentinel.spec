@@ -44,7 +44,7 @@ cp contrib/ip-sentinel.init %buildroot%_initrddir/%name
 cat > %buildroot%_sysconfdir/sysconfig/%name <<EOF
 IPS_USER=ip-sentinel
 IPS_GROUP=ip-sentinel
-# IPS_CHROOT=%_localstatedir/%name
+# IPS_CHROOT=%_localstatedir/lib/%name
 # IPS_IPFILE=ips.cfg
 # IPS_LOGFILE=/var/log/ip-sentinel.out
 # IPS_ERRFILE=/var/log/ip-sentinel.err
@@ -70,13 +70,13 @@ cat > %buildroot%_sysconfdir/logrotate.d/%name << EOF
 EOF
 
 # Data
-mkdir -p %buildroot{%_localstatedir/%name,%_var/log}
+mkdir -p %buildroot{%_localstatedir/lib/%name,%_var/log}
 touch %buildroot%_var/log/%name.out
 touch %buildroot%_var/log/%name.err
 
 
 %pre
-  %_pre_useradd %name %_localstatedir/%name /bin/true
+  %_pre_useradd %name %_localstatedir/lib/%name /bin/true
 
 %post
   touch %_var/log/%name.out
@@ -97,7 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %_sbindir/%name
 %_mandir/man8/%{name}*
-%dir %_localstatedir/%name
+%dir %_localstatedir/lib/%name
 %config(noreplace) %_sysconfdir/sysconfig/%name
 %config(noreplace) %_initrddir/%name
 %config(noreplace) %_sysconfdir/logrotate.d/%name
