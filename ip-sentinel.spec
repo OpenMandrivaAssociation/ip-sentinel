@@ -1,6 +1,6 @@
 %define name ip-sentinel
 %define version 0.12
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary: A network ip guardian
 Name: %{name}
